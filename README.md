@@ -1,5 +1,5 @@
 # Application Manager
-## Application Manager app build using Angular 9
+## Application Manager app build using Angular 9 & Kinvey mBaaS
 
 How to start the project:
 
