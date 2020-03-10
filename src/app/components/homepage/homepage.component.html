@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="wrapper" *ngIf="applications">
+    <div *ngIf="applications.length > 0">
+      <app-application *ngFor="let application of applications" [application]="application" (deleteApplicationEvent)="removeApplication($event)"></app-application>
+    </div>
+    <div *ngIf="applications.length === 0" class="no-applications-message">
+      There are currently no applications. Tap <a routerLink="/create">here</a> to add a new application.
+    </div>
+  </div>
+</div>

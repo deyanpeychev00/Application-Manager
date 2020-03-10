@@ -1,0 +1,7 @@
+<nav [ngClass]="setNavbarClasses()">
+  <a class="menu-link" routerLink="/applications" routerLinkActive="active">Applications</a>
+  <a class="menu-link" routerLink="/create" routerLinkActive="active">Create Application</a>
+  <a href="javascript:void(0);" class="menu-link icon" (click)="toggleNavbar()">
+    <span class="toggleIcon">...</span>
+  </a>
+</nav>

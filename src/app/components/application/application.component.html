@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="container heading">
+    <div>
+      <h2>{{application.name}}, {{application.age}}</h2>
+      <h3>{{application.email}}, {{application.phone_number}}</h3>
+    </div>
+  </div>
+  <div class="container">
+    <h4>Personal Information: </h4>
+    <p>{{application.personal_presentation}}</p>
+    <p><span class="lighten">Technical skills and courses:</span> {{application.tech_skills}}</p>
+    <h4>Additional Details: </h4>
+    <p><span class="lighten">Preferred way of communication:</span> {{application.communication_way}}</p>
+    <p><span class="lighten">English level:</span> {{application.english_level}}</p>
+    <p><span class="lighten">Available to start at:</span> {{application.available_to_start}}</p>
+    <p><span class="lighten">Study from home: </span>
+      <span *ngIf="application.study_from_home">Yes</span>
+      <span *ngIf="!application.study_from_home">No</span>
+    </p>
+  </div>
+  <div class="footer">
+    <div>
+      <a routerLink="/update/{{application._id}}">
+        <button class="control-button edit-button" >Edit</button>
+      </a>
+      <button class="control-button delete-button" (click)="displayDeleteModal()">Delete</button>
+    </div>
+  </div>
+</div>
+
+<div class="deleteModal" id="{{application._id}}" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p>Are you sure you want to delete the application?</p>
+    <div>
+      <button class="control-button cancel-button" (click)="closeDeleteModal()">Cancel</button>
+      <button class="control-button delete-button" (click)="deleteApplication()">Delete</button>
+    </div>
+  </div>
+
+</div>

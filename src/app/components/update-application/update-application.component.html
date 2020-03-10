@@ -1,0 +1,77 @@
+<div class="wrapper">
+  <div id="formContent">
+    <h2 class="active">Update Application</h2>
+
+    <form (ngSubmit)="submitUpdate()">
+      <div class="form-container">
+        <h3>Personal Information:</h3>
+        <div class="input-container">
+          <input type="text" id="inputFullName" placeholder="Name" required [(ngModel)]="application.name"
+                 name="username">
+        </div>
+        <div class="input-container">
+          <input type="text" id="inputEmail" placeholder="Email" required [(ngModel)]="application.email"
+                 name="application_email">
+        </div>
+        <div class="input-container">
+          <input type="number" id="age" placeholder="Age" required [(ngModel)]="application.age"
+                 name="age">
+        </div>
+        <div class="input-container">
+          <input type="text" id="phone" placeholder="Phone number" required [(ngModel)]="application.phone_number"
+                 name="phone_number">
+        </div>
+        <div class="input-container">
+          <input type="text" id="techSkillsCourses" placeholder="Technical skills and courses" required [(ngModel)]="application.tech_skills"
+                 name="techSkillsCourses">
+        </div>
+        <div class="input-container">
+          <textarea id="personalPresentation" placeholder="Personal Presentation" required [(ngModel)]="application.personal_presentation"
+                    name="personalPresentation"></textarea>
+        </div>
+        <div class="radio-group">
+          <input type="checkbox" id="studyFromHome" name="studyFromHome" [(ngModel)]="application.study_from_home"><label for="studyFromHome">Study from home</label>
+        </div>
+
+        <h3>Preferred way of communication:</h3>
+
+        <div class="radio-group no-margin">
+          <input type="radio" id="option-one" name="phone" value="Phone" [(ngModel)]="application.communication_way"><label
+          for="option-one">Phone</label>
+          <input type="radio" id="option-two" name="email" value="Email" [(ngModel)]="application.communication_way"><label
+          for="option-two">Email</label>
+        </div>
+
+        <div>
+          <h3>English level:</h3>
+          <div class="input-container">
+            <select id="englishLevelSelect" [(ngModel)]="application.english_level" name="english_level_select">
+              <optgroup label="English Basic User (A1, A2)">
+                <option value="A1 (Beginner)" name="english_level_a1">A1 (Beginner)</option>
+                <option value="A2 (Elementary English)" name="english_level_a2">A2 (Elementary English)</option>
+              </optgroup>
+              <optgroup label="English Independent User (B1, B2)">
+                <option value="B1 (Intermediate English)" name="english_level_b1">B1 (Intermediate English)</option>
+                <option value="B2 (Upper-Intermediate English)" name="english_level_b2">B2 (Upper-Intermediate English)</option>
+              </optgroup>
+              <optgroup label="Proficient English User (C1, C2)">
+                <option value="C1 (Advanced English)" name="english_level_c1">C1 (Advanced English)</option>
+                <option value="A2 (Elementary English)" name="english_level_c2">C2 (Proficiency English)</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+
+        <h3>Available to start:</h3>
+        <div class="input-container">
+          <input type="date" id="availableToStart" name="availableToStart" [(ngModel)]="application.available_to_start">
+        </div>
+      </div>
+      <input type="submit" value="Update">
+      <div [ngClass]="setErrorMessageClasses()">
+        <span class="closebtn" (click)="hideErrorMessage()">&times;</span>
+        {{errorMessage.msg}}
+      </div>
+    </form>
+  </div>
+</div>
